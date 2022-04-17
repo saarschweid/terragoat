@@ -24,6 +24,9 @@ resource "aws_s3_bucket" "data" {
 
 resource "aws_s3_bucket" "data_log_bucket" {
   bucket = "data-log-bucket"
+  tags = {
+    yor_trace = "c99f09dd-ae5e-41de-9c8e-39217af314ed"
+  }
 }
 
 resource "aws_s3_bucket_logging" "data" {
@@ -40,7 +43,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "data" {
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm     = "AES256"
+      sse_algorithm = "AES256"
     }
   }
 }
@@ -59,6 +62,9 @@ resource "aws_s3_bucket_versioning" "data" {
 
 resource "aws_s3_bucket" "data_log_bucket" {
   bucket = "data-log-bucket"
+  tags = {
+    yor_trace = "c99f09dd-ae5e-41de-9c8e-39217af314ed"
+  }
 }
 
 resource "aws_s3_bucket_logging" "data" {
@@ -75,7 +81,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "data" {
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm     = "AES256"
+      sse_algorithm = "AES256"
     }
   }
 }
@@ -188,7 +194,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "data_science" {
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm     = "AES256"
+      sse_algorithm = "AES256"
     }
   }
 }
@@ -200,7 +206,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "data_science" {
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm     = "AES256"
+      sse_algorithm = "AES256"
     }
   }
 }
